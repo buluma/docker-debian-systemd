@@ -28,5 +28,5 @@ docker run \
   --tty \
   --privileged \
   --volume /sys/fs/cgroup:/sys/fs/cgroup:ro \
-  buluma/debian-systemd:bullseye
+  buluma/debian-systemd:testing
 ```
