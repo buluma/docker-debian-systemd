@@ -9,13 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     env:
       REPOSITORY_URL: docker.pkg.github.com
-      IMAGE_NAME: ${{ github.repository }}/alerta-cli
+      IMAGE_NAME: ${{ github.repository }}
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
     steps:
       - uses: act10ns/slack@v1
         with:
           status: starting
-          channel: '#workflows'
+          channel: '#ansible'
           message: Starting Docker Build and Push...
         if: always()
       - name: Checkout
