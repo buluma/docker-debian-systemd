@@ -24,21 +24,25 @@ jobs:
       - name: Variables
         id: vars
         run: echo "::set-output name=SHORT_COMMIT_ID::$(git rev-parse --short HEAD)"
-      - name: Build image
-        id: docker-build
-        run: >-
-          docker build
-          -t $IMAGE_NAME
-          -t $REPOSITORY_URL/$IMAGE_NAME:${{ steps.vars.outputs.SHORT_COMMIT_ID }}
-          -t $REPOSITORY_URL/$IMAGE_NAME:latest .
-      - name: Docker Login
-        env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
-        run: docker login $REPOSITORY_URL --username "$DOCKER_USERNAME" --password "$DOCKER_PASSWORD"
-      - name: Publish Image
-        id: docker-push
-        run: docker push $REPOSITORY_URL/$IMAGE_NAME
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Set short
+        run: echo "short=${GITHUB_REF##*/}" >> "${GITHUB_ENV}"
+      - name: Set tag
+        run: echo "tag=${short/main/latest}" >> "${GITHUB_ENV}"
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: buluma/debian-systemd:${{ env.tag }}
 
       - uses: act10ns/slack@v1
         with:
