@@ -2,11 +2,18 @@ name: build-push
 
 on:
   push:
+  workflow_dispatch:
 
 jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
+      - uses: act10ns/slack@v1
+        with:
+          status: starting
+          channel: '#docker-hub'
+          message: Starting Docker Build and Push...
+        if: always()
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
       - name: Set up Docker Buildx
@@ -26,3 +33,10 @@ jobs:
         with:
           push: true
           tags: buluma/debian-systemd:${{ env.tag }}
+      - uses: act10ns/slack@v1
+        with:
+          status: ${{ job.status }}
+          steps: ${{ toJson(steps) }}
+          channel: '#docker-hub'
+        if: always()
+
