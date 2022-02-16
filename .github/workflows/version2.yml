@@ -16,7 +16,7 @@ jobs:
       - uses: act10ns/slack@v1
         with:
           status: starting
-          channel: '#docker-hub'
+          channel: '#github'
           message: Starting Docker Build and Push..
         if: always()
       - name: Checkout
@@ -48,5 +48,5 @@ jobs:
         with:
           status: ${{ job.status }}
           steps: ${{ toJson(steps) }}
-          channel: '#docker-hub'
+          channel: '#github'
         if: always()
