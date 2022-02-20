@@ -5,7 +5,7 @@ on:
   pull_request:
   push:
     branches:
-      - 'bookworm'
+      - 'main'
   schedule:
     - cron: '10 5,12 * * *'
   workflow_dispatch:
@@ -13,7 +13,7 @@ on:
 jobs:
   # Test the image builds and works correctly.
   test:
-    name: Test Fedora-latest
+    name: Test Fedora-bullseye
     # runs-on: ubuntu-latest
     runs-on: ${{ matrix.os }}
     strategy:
