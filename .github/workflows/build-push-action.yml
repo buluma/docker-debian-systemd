@@ -13,7 +13,7 @@ on:
 jobs:
   # Test the image builds and works correctly.
   test:
-    name: Test Fedora-bullseye
+    name: Test debian-latest
     # runs-on: ubuntu-latest
     runs-on: ${{ matrix.os }}
     strategy:
@@ -24,10 +24,10 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Test building image.
-        run: docker build -t docker-fedora-latest .
+        run: docker build -t docker-debian-latest .
 
       - name: Run the built image.
-        run: docker run --name test-container -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro docker-fedora-latest
+        run: docker run --name test-container -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro docker-debian-latest
 
   # If on bookworm branch, build and release image.
   release:
