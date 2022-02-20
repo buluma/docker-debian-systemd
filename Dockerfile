@@ -1,6 +1,6 @@
 FROM debian:bookworm
 
-LABEL maintainer="Michael Buluma <me@buluma.co.ke>"
+LABEL maintainer="Michael Buluma <me@buluma.me.ke>"
 LABEL build_date="2022-02-20"
 
 ENV container docker
