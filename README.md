@@ -12,7 +12,7 @@ This repository has multiple branches that relate to Debian versions.
 
 |Branch |Debian Version|Docker image tag|
 |-------|--------------|----------------|
-|master     |latest (buster/10)            |latest              |
+| main     |latest (buster/10)            |latest              |
 | testing |bullseye/sid  | testing         |
 | unstable |bullseye/sid  | unstable         |
 
