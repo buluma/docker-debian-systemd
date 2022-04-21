@@ -10,7 +10,7 @@ ENV pip_packages "ansible==3.4.0 cryptography"
 
 # Enable systemd.
 RUN apt-get update ; \
-    apt-get install -y sudo systemd systemd-sysv python3; \
+    apt-get install -y sudo systemd systemd-sysv python3 python3-pip python3-dev python3-setuptools python3-wheel python3-apt; \
     apt-get clean ; \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* ; \
     rm -rf /lib/systemd/system/multi-user.target.wants/* ; \
