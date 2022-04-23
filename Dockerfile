@@ -1,12 +1,12 @@
 FROM debian:bookworm
 
 LABEL maintainer="Michael Buluma <me@buluma.me.ke>"
-LABEL build_date="2022-02-20"
+LABEL build_date="2022-04-23"
 
 ENV container docker
 ENV DEBIAN_FRONTEND noninteractive
 
-ENV pip_packages "ansible==3.4.0 cryptography"
+ENV pip_packages "ansible==2.12.3 cryptography"
 
 # Enable systemd.
 RUN apt-get update ; \
