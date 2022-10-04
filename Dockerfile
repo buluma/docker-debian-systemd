@@ -1,4 +1,4 @@
-FROM debian:bullseye
+FROM debian:buster
 
 LABEL maintainer="Michael Buluma <me@buluma.co.ke>"
 LABEL build_date="2022-10-04"
