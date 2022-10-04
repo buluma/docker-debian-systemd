@@ -1,7 +1,7 @@
 FROM debian:bullseye
 
 LABEL maintainer="Michael Buluma <me@buluma.co.ke>"
-LABEL build_date="2022-04-21"
+LABEL build_date="2022-10-04"
 
 ENV container docker
 ENV DEBIAN_FRONTEND noninteractive
