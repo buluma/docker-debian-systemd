@@ -12,9 +12,15 @@ This repository has multiple branches that relate to Debian versions.
 
 |Branch |Debian Version|Docker image tag|
 |-------|--------------|----------------|
-| main     |latest (buster/10)            |latest              |
-| testing |bullseye/sid  | testing         |
-| unstable |bullseye/sid  | unstable         |
+| master | current "stable" release (11) | bullseye,latest |
+| buster | current "oldstable" release (10) | buster |
+| bookworm | next release | bookworm |
+
+Quick reference (cont.)
+-------------
+Where to file issues: https://github.com/buluma/debian-systemd/issues
+
+Supported architectures: (more info) amd64, arm64
 
 Pull strategy
 -------------
