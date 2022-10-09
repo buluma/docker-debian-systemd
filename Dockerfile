@@ -1,14 +1,14 @@
 FROM debian:buster
 
 LABEL maintainer="Michael Buluma <me@buluma.co.ke>"
-LABEL build_date="2022-10-04"
+LABEL build_date="2022-10-09"
 
 ENV container docker
 ENV DEBIAN_FRONTEND noninteractive
 
 # Enable systemd.
 RUN apt-get update ; \
-    apt-get install -y systemd systemd-sysv ; \
+    apt-get install -y sudo systemd systemd-sysv python3; \
     apt-get clean ; \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* ; \
     rm -rf /lib/systemd/system/multi-user.target.wants/* ; \
