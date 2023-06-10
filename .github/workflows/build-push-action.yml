@@ -55,4 +55,4 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            buluma/debian-systemd:latest, buluma/debian:${{ env.tag }}
+            buluma/debian-systemd:latest, buluma/debian:latest
