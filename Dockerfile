@@ -1,7 +1,7 @@
 FROM debian:bookworm
 
 LABEL maintainer="Michael Buluma <me@buluma.me.ke>"
-LABEL build_date="2022-04-23"
+LABEL build_date="2023-11-20"
 
 ENV container docker
 ENV DEBIAN_FRONTEND noninteractive
