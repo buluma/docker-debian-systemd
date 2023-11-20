@@ -1,7 +1,7 @@
 FROM debian:buster
 
 LABEL maintainer="Michael Buluma <me@buluma.co.ke>"
-LABEL build_date="2022-10-09"
+LABEL build_date="2023-11-20"
 
 ENV container docker
 ENV DEBIAN_FRONTEND noninteractive
