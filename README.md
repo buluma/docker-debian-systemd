@@ -10,17 +10,11 @@ Branches
 
 This repository has multiple branches that relate to Debian versions.
 
-|Branch |Debian Version|Docker image tag|
-|-------|--------------|----------------|
-| master | current "stable" release (11) | bullseye,latest |
-| buster | current "oldstable" release (10) | buster |
-| bookworm | next release | bookworm |
-
-Quick reference (cont.)
--------------
-Where to file issues: https://github.com/buluma/debian-systemd/issues
-
-Supported architectures: (more info) amd64, arm64
+|Branch  |Debian Version      |Docker image tag|
+|--------|--------------------|----------------|
+|master  |latest (bookworm/12)|latest          |
+|bullseye|bullseye (11)       |bullseye        |
+|buster  |buster (10)         |buster          |
 
 Pull strategy
 -------------
@@ -35,5 +29,5 @@ docker run \
   --tty \
   --privileged \
   --volume /sys/fs/cgroup:/sys/fs/cgroup:ro \
-  buluma/debian-systemd:latest
+  buluma/debian
 ```
