@@ -1,7 +1,7 @@
 FROM debian
 
 LABEL maintainer="Michael Buluma <me@buluma.co.ke>"
-LABEL build_date="2023-11-20"
+LABEL build_date="2023-12-23"
 
 ENV container docker
 ENV DEBIAN_FRONTEND noninteractive
