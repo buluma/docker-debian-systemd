@@ -1,4 +1,4 @@
-FROM debian:bookworm
+FROM debian
 
 LABEL maintainer="Michael Buluma <me@buluma.co.ke>"
 LABEL build_date="2023-12-23"
