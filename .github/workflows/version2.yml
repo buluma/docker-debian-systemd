@@ -20,7 +20,7 @@ jobs:
           message: Starting Docker Build and Push..
         if: always()
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Variables
         id: vars
         run: echo "::set-output name=SHORT_COMMIT_ID::$(git rev-parse --short HEAD)"
